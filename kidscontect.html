@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | N.S. Global School</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght=500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Quicksand', sans-serif; background-color: #fcf8f2; color: #4a4a4a; }
+        h1, h2, h3, .navbar-brand { font-family: 'Fredoka One', cursive; }
+        .bg-kids-yellow { background-color: #FFDE4D; }
+        .bg-kids-pink { background-color: #FF6B6B; }
+        .bg-kids-blue { background-color: #4D96FF; }
+        .bg-kids-green { background-color: #6BCB77; }
+        .text-kids-pink { color: #FF6B6B; }
+        .text-kids-blue { color: #4D96FF; }
+        .text-kids-green { color: #6BCB77; }
+        .navbar { background-color: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .nav-link { font-weight: 700; color: #555; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #FF6B6B; }
+        .btn-kids { font-family: 'Fredoka One', cursive; border-radius: 30px; padding: 12px 30px; transition: 0.3s; border: none; }
+        .btn-kids:hover { opacity: 0.9; transform: translateY(-2px); }
+
+
+
+          .contect-header-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.9) 0%, rgba(255, 210, 111, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            border-radius: 0 0 50px 50px; 
+            box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+            padding: 90px 0;
+            text-align: center;
+        }
+        
+        /* Dashboard Overlay Enhancement */
+        #adminView { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f4f7f6; z-index: 9999; overflow-y: auto; padding: 40px 20px; }
+        .dashboard-card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; }
+        .program-badge { padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
+        
+        /* Custom Toast Notification */
+        .custom-toast { display: none; position: fixed; top: 20px; right: 20px; z-index: 10000; background: #6BCB77; color: white; padding: 15px 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: 700; animation: slideIn 0.5s ease; }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- Alert Notification -->
+    <div id="successToast" class="custom-toast">
+        <i class="fa-solid fa-circle-check me-2"></i> Application Submitted Successfully!
+    </div>
+
+    <div id="websiteView">
+        <!-- 1. NAVIGATION BAR -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-kids-pink fs-3" href="#">
+                    <i class="fa-solid fa-graduation-cap me-2 text-kids-blue"></i>N.S. Global School
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/indexkids.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsabout.html">AboutUs</a></li>
+                        <li class="nav=item"><a class="nav=link" href="file:///D:/kidsschool/primaryschool.html">PrimarySchool</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/oursclass.html">Classes</a></li>
+
+                         <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kindergarten.html">kindergarten</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/playgroup.html">PlayGroup</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsgallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidscontect.html">Contact</a></li>
+                       <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/potefoilo.html">Potefoilo</a></li>
+                        <li class="nav-item">
+                            <button onclick="toggleAdminView(true)" class="btn btn-outline-dark rounded-pill ms-2"><i class="fa-solid fa-lock me-1"></i> Admin Panel</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+           <header class="contect-header-box mb-5">
+        <div class="container">
+            <span class="badge bg-kids-pink text-white px-3 py-2 rounded-pill mb-3">Campus Memories</span>
+            <h1 class="display-4 fw-bold mb-3" style="color: #4a4a4a;">Content</h1>
+            <p class="lead text-secondary mx-auto mb-0" style="max-width:650px; font-weight: 700;">
+                Admission ke liye: "Enroll your child today for a bright tomorrow – Contact us at [82641 92520].
+            </p>
+        </div>
+    </header>
+
+        <!-- CONTACT MAIN SECTION -->
+        <section class="py-5 container">
+            <div class="row bg-kids-yellow rounded-4 shadow overflow-hidden p-5 align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold text-dark">Admissions Are Open! 🚀</h2>
+                    <p class="fs-5 text-dark-50">Reserve a bright future for your little one today. Fill out our registration form and our office team will get back to you.</p>
+                    <div class="mt-4 text-dark fw-bold bg-white p-4 rounded-4 shadow-sm inline-block">
+                        <p class="mb-3"><i class="fa-solid fa-phone me-2 text-kids-pink fs-5"></i> +91 8264192520</p>
+                        <p class="mb-3"><i class="fa-solid fa-envelope me-2 text-kids-blue fs-5"></i> nareshsharmakumar2333@gmail.com</p>
+                        <p class="mb-0"><i class="fa-solid fa-location-dot me-2 text-kids-green fs-5"></i> Ram Nagar Education, Ludhiana</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 bg-white p-4 rounded-4 shadow-sm">
+                    <h3 class="text-center mb-4 text-kids-pink">Enrollment Enquiry</h3>
+                    <form id="enquiryForm" onsubmit="handleFormSubmit(event)">
+                        <!-- Hidden fields for FormSubmit features -->
+                        <input type="hidden" name="_subject" value="New TinyTots Admission Form Submission!">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="mb-3">
+                            <input type="text" name="Parent Name" id="parentName" class="form-control rounded-pill p-3" placeholder="Parent's Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="Email Address" id="emailAddr" class="form-control rounded-pill p-3" placeholder="Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" name="Phone Number" id="contactNum" class="form-control rounded-pill p-3" placeholder="Contact Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <select name="Selected Program" id="progSelect" class="form-select rounded-pill p-3" required>
+                                <option value="" selected disabled>Select a Program</option>
+                                <option value="Playgroup & Nursery">Playgroup & Nursery</option>
+                                <option value="Junior / Senior KG">Junior / Senior KG</option>
+                                <option value="Primary School">Primary School</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn btn-kids bg-kids-pink text-white w-100 p-3 fs-5 shadow">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-kids-blue text-white py-4 text-center mt-5">
+            <div class="container">
+                <p class="mb-0 fw-bold">&copy; 2026 N.S. Global School. All Rights Reserved.</p>
+            </div>
+        </footer class="bg-kids-blue text-white py-4 text-center mt-5">
+    </div>
+
+    <!-- ADMIN WINDOW OVERLAY -->
+    <div id="adminView">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1"><i class="fa-solid fa-chart-pie me-2 text-kids-blue"></i>Management Dashboard</h2>
+                    <p class="text-muted mb-0">Track and manage new student registration requests</p>
+                </div>
+                <button onclick="toggleAdminView(false)" class="btn btn-dark btn-lg rounded-pill px-4 shadow-sm"><i class="fa-solid fa-arrow-left me-2"></i>Back to Site</button>
+            </div>
+            
+            <div class="card dashboard-card">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="p-4">#</th>
+                                    <th>Parent's Details</th>
+                                    <th>Contact Info</th>
+                                    <th>Interested Program</th>
+                                    <th>Date Received</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form handling with AJAX/Fetch to protect dashboard save state
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerText = "Processing...";
+
+            const parentName = document.getElementById('parentName').value;
+            const email = document.getElementById('emailAddr').value;
+            const phone = document.getElementById('contactNum').value;
+            const program = document.getElementById('progSelect').value;
+            const dateStr = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+            const newEnquiry = { name: parentName, email: email, phone: phone, program: program, date: dateStr };
+
+            // 1. Save data natively to LocalStorage dashboard immediately
+            let currentEntries = JSON.parse(localStorage.getItem('schoolEnquiries')) || [];
+            currentEntries.push(newEnquiry);
+            localStorage.setItem('schoolEnquiries', JSON.stringify(currentEntries));
+
+            // 2. Dispatch data to FormSubmit URL seamlessly via Fetch
+            const formData = new FormData(document.getElementById('enquiryForm'));
+            try {
+                await fetch("https://formsubmit.co/ajax/nareshsharmakumar2333@gmail.com", {
+                    method: "POST",
+                    body: formData
+                });
+            } catch (err) {
+                console.warn("Email dispatch skipped or network offline, data cached locally instead.");
+            }
+
+            // UI feedback & resetting state
+            btn.disabled = false;
+            btn.innerText = "Submit Application";
+            document.getElementById('enquiryForm').reset();
+            
+            // Show dynamic feedback popup
+            const toast = document.getElementById('successToast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 4000);
+        }
+
+        function toggleAdminView(showAdmin) {
+            if (showAdmin) {
+                document.getElementById('websiteView').style.display = 'none';
+                document.getElementById('adminView').style.display = 'block';
+                renderTableData();
+            } else {
+                document.getElementById('websiteView').style.display = 'block';
+                document.getElementById('adminView').style.display = 'none';
+            }
+        }
+
+        function renderTableData() {
+            const tableBody = document.getElementById('adminTableBody');
+            let currentEntries = JSON.parse(localStorage.getItem('schoolEnquiries')) || [];
+            tableBody.innerHTML = '';
+            
+            if(currentEntries.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="6" class="text-center py-5 text-muted"><i class="fa-solid fa-folder-open fs-2 d-block mb-3 text-secondary"></i>No applications received yet.</td></tr>`;
+                return;
+            }
+
+            // Assign clean dynamic colors to specific courses
+            const badgeColors = {
+                'Playgroup & Nursery': 'bg-kids-pink text-white',
+                'Junior / Senior KG': 'bg-kids-yellow text-dark',
+                'Primary School': 'bg-kids-blue text-white'
+            };
+
+            currentEntries.forEach((entry, index) => {
+                const badgeClass = badgeColors[entry.program] || 'bg-secondary text-white';
+                tableBody.innerHTML += `
+                    <tr>
+                        <td class="p-4 fw-bold text-muted">${index + 1}</td>
+                        <td>
+                            <div class="fw-bold text-dark">${entry.name}</div>
+                        </td>
+                        <td>
+                            <div class="small text-muted"><i class="fa-solid fa-envelope me-1"></i>${entry.email}</div>
+                            <div class="small text-muted"><i class="fa-solid fa-phone me-1"></i>${entry.phone}</div>
+                        </td>
+                        <td><span class="program-badge ${badgeClass}">${entry.program}</span></td>
+                        <td class="text-muted small">${entry.date || 'Recent'}</td>
+                        <td class="text-center">
+                            <button onclick="deleteEntry(${index})" class="btn btn-outline-danger btn-sm px-3 rounded-pill border-0"><i class="fa-solid fa-trash-can me-1"></i> Delete</button>
+                        </td>
+                    </tr>`;
+            });
+        }
+
+        function deleteEntry(index) {
+            if(confirm('Are you certain you want to remove this record permanently?')) {
+                let currentEntries = JSON.parse(localStorage.getItem('schoolEnquiries')) || [];
+                currentEntries.splice(index, 1);
+                localStorage.setItem('schoolEnquiries', JSON.stringify(currentEntries));
+                renderTableData();
+            }
+        }
+    </script>
+</body>
+</html>

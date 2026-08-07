@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Classes | N.S. Global School</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght=500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Quicksand', sans-serif; background-color: #fcf8f2; color: #4a4a4a; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Fredoka One', cursive; }
+        
+        /* Color Palettes */
+        .bg-kids-pink { background-color: #FF6B6B; }
+        .bg-kids-blue { background-color: #4D96FF; }
+        .bg-kids-green { background-color: #6BCB77; }
+        .bg-kids-orange { background-color: #FF9F43; }
+        .text-kids-pink { color: #FF6B6B; }
+        .text-kids-blue { color: #4D96FF; }
+        .text-kids-orange { color: #FF9F43; }
+
+        /* Navbar Styling */
+        .navbar { background-color: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .nav-link { font-weight: 700; color: #555; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #FF6B6B; }
+        
+        /* Premium Hero Section with Dark Overlay Image */
+        .inner-header { 
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1600'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 120px 0; 
+            text-align: center; 
+            color: #ffffff;
+        }
+
+
+
+        /* Updated Unique Background Image for Hero Section */
+.inner-header { 
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=1600'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 130px 0; 
+    text-align: center; 
+    color: #ffffff;
+    border-radius: 0 0 50px 50px;
+}
+
+        /* Upgraded Class Cards */
+        .class-card { border: none; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); background: #fff; transition: 0.3s; }
+        .class-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .class-img { height: 240px; object-fit: cover; width: 100%; }
+        
+        .feature-badge { background: #f8f9fa; color: #666; border-radius: 12px; padding: 6px 12px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin: 4px; }
+        
+        /* Section Dynamic Images */
+        .side-showcase-img { width: 100%; max-height: 450px; object-fit: cover; border-radius: 30px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+        /* Co-Curricular Section styling */
+        .activity-box { background: #fff; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.03); transition: 0.3s; border-bottom: 5px solid transparent; h100% }
+        .activity-box:hover { transform: translateY(-5px); }
+        .act-blue:hover { border-color: #4D96FF; }
+        .act-pink:hover { border-color: #FF6B6B; }
+        .act-green:hover { border-color: #6BCB77; }
+        .act-orange:hover { border-color: #FF9F43; }
+
+        /* Wave Separators */
+        .wave-container { position: relative; width: 100%; background: #ffffff; line-height: 0; }
+        .wave-container svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
+
+         /* 🌟 MODERN UNIQUE PASTEL FOOTER STYLING */
+        .kids-footer {
+            /* Unique Premium Pastel Gradient (Soft Indigo to Mint Teal) */
+            background: linear-gradient(135deg, #EBF4FF 0%, #E6FFFA 50%, #F3E8FF 100%);
+            border-radius: 60px 60px 0 0;
+            padding: 70px 0 20px 0;
+            margin-top: 80px;
+            position: relative;
+            box-shadow: 0 -15px 40px rgba(77, 150, 255, 0.06);
+            border-top: 2px solid rgba(255, 255, 255, 0.8);
+        }
+        .footer-brand {
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+        .footer-link {
+            color: #5A6A85;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .footer-link:hover {
+            color: var(--pink);
+            transform: translateX(5px);
+        }
+        .footer-contact-item {
+            font-weight: 600;
+            color: #5A6A85;
+            margin-bottom: 15px;
+        }
+        .footer-contact-item i {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        /* Social Media Icons */
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #5A6A85;
+            margin-right: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-circle:hover {
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .social-facebook:hover { background-color: #3b5998; }
+        .social-instagram:hover { background-color: #e1306c; }
+        .social-youtube:hover { background-color: #ff0000; }
+        .social-twitter:hover { background-color: #1da1f2; }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+        <!-- 1. NAVIGATION BAR -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-kids-pink fs-3" href="#">
+                    <i class="fa-solid fa-graduation-cap me-2 text-kids-blue"></i>N.S. Global School
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/indexkids.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsabout.html">AboutUs</a></li>
+                        <li class="nav=item"><a class="nav=link" href="file:///D:/kidsschool/primaryschool.html">PrimarySchool</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/oursclass.html">Classes</a></li>
+
+                         <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kindergarten.html">kindergarten</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/playgroup.html">PlayGroup</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsgallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidscontect.html">Contact</a></li>
+                       <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/potefoilo.html">Potefoilo</a></li>
+                        <li class="nav-item">
+                            <button onclick="toggleAdminView(true)" class="btn btn-outline-dark rounded-pill ms-2"><i class="fa-solid fa-lock me-1"></i> Admin Panel</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!-- HEADER WITH PREMIUM BG IMAGE -->
+    <header class="inner-header">
+        <div class="container">
+            <span class="badge bg-kids-pink text-white px-3 py-2 rounded-pill mb-3">Academic Ecosystem</span>
+            <h1 class="display-3 fw-bold mb-3">Programs Tailored For Every Age</h1>
+            <p class="lead max-width-600 mx-auto" style="font-weight: 500; font-size: 1.2rem;">
+                Providing scientifically engineered educational milestones customized specifically for your child's natural learning pace.
+            </p>
+        </div>
+    </header>
+
+    <!-- VISUAL INTRO SHOWCASE SECTION -->
+    <section class="py-5 container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="text-kids-pink fw-bold text-uppercase tracking-wider d-block mb-2">Modern Pedagogy</span>
+                <h2 class="display-5 mb-4">Where Learning Meets Creative Exploration</h2>
+                <p class="text-muted Friendly-lead mb-4">
+                    Humare academic pathways sirf core subjects par limit nahi hain. We blend structured mental theory models with real-world kinetic activities so kids love what they absorb daily.
+                </p>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="p-3 border-start border-3 border-primary bg-white rounded-end">
+                            <h5 class="mb-1 text-kids-blue">Smart Labs</h5>
+                            <p class="small text-muted mb-0">Immersive modern design assets.</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border-start border-3 border-success bg-white rounded-end">
+                            <h5 class="mb-1 text-success">Expert Care</h5>
+                            <p class="small text-muted mb-0">Certified childhood specialists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Unique Creative Classroom Image -->
+                <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&q=80&w=800" class="side-showcase-img" alt="Kids doing creative activity">
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE DIVIDER -->
+    <div class="wave-container">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none" style="transform: rotate(180deg); height: 50px; fill: #ffffff; background: #fcf8f2;">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+
+ <!-- CORE ACADEMIC PROGRAMS -->
+<section class="py-5" style="background-color: #ffffff;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-6 text-dark">Our Foundational Classes</h2>
+            <p class="text-muted">Explore structured, child-centric academic curriculum setups designed by top specialists.</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Program 1: Playgroup -->
+            <div class="col-md-4">
+                <div class="class-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&q=80&w=600" class="class-img w-100" alt="Playgroup Learning" style="object-fit: cover; height: 230px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-kids-pink">Age: 2-3 Years</span>
+                                <span class="text-muted small fw-bold"><i class="fa-regular fa-clock me-1"></i>09:00 AM - 12:30 PM</span>
+                            </div>
+                            <h4 class="fw-bold text-dark mt-2">Playgroup & Nursery</h4>
+                            <p class="text-muted mb-3">A child's very first step into school life, focusing seamlessly on color recognition, fundamental structural shapes, and early sensory coordination development frameworks.</p>
+                            <hr>
+                            <h5 class="fs-6 fw-bold text-secondary mb-2">Key Learning Focus:</h5>
+                            <div class="mb-4">
+                                <span class="feature-badge me-2"><i class="fa-solid fa-palette text-kids-pink me-1"></i> Sensory Arts</span>
+                                <span class="feature-badge me-2"><i class="fa-solid fa-shapes text-primary me-1"></i> Basic Shapes</span>
+                                <span class="feature-badge"><i class="fa-solid fa-music text-success me-1"></i> Rhymes & Audio</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LINK ADDED HERE -->
+                    <div class="px-4 pb-4">
+                        <a href="file:///D:/kidsschool/playgroup.html" class="btn w-100 text-white" style="background-color: #e91e63;">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Program 2: Kindergarten -->
+            <div class="col-md-4">
+                <div class="class-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5?auto=format&fit=crop&q=80&w=600" class="class-img w-100" alt="Kindergarten Class" style="object-fit: cover; height: 230px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-kids-blue">Age: 3-5 Years</span>
+                                <span class="text-muted small fw-bold"><i class="fa-regular fa-clock me-1"></i>09:00 AM - 01:30 PM</span>
+                            </div>
+                            <h4 class="fw-bold text-dark mt-2">Junior / Senior KG</h4>
+                            <p class="text-muted mb-3">At this strategic milestone, we deeply strengthen early native language reading fluencies, basic phonetic patterns, basic mathematical calculations, and critical social values.</p>
+                            <hr>
+                            <h5 class="fs-6 fw-bold text-secondary mb-2">Key Learning Focus:</h5>
+                            <div class="mb-4">
+                                <span class="feature-badge me-2"><i class="fa-solid fa-book-open text-kids-blue me-1"></i> Early Phonics</span>
+                                <span class="feature-badge me-2"><i class="fa-solid fa-calculator text-danger me-1"></i> Math Counting</span>
+                                <span class="feature-badge"><i class="fa-solid fa-people-group text-warning me-1"></i> Social Etiquette</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LINK ADDED HERE -->
+                    <div class="px-4 pb-4">
+                        <a href="file:///D:/kidsschool/kindergarten.html" class="btn w-100 text-white" style="background-color: #00bcd4;">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Program 3: Primary School -->
+            <div class="col-md-4">
+                <div class="class-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=600" class="class-img w-100" alt="Primary Education" style="object-fit: cover; height: 230px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-kids-green">Age: 5-8 Years</span>
+                                <span class="text-muted small fw-bold"><i class="fa-regular fa-clock me-1"></i>08:30 AM - 02:00 PM</span>
+                            </div>
+                            <h4 class="fw-bold text-dark mt-2">Primary School</h4>
+                            <p class="text-muted mb-3">A highly structured, premium transition introducing elementary Environmental Sciences, detailed interactive group projects, and extensive formal Mathematics methodologies.</p>
+                            <hr>
+                            <h5 class="fs-6 fw-bold text-secondary mb-2">Key Learning Focus:</h5>
+                            <div class="mb-4">
+                                <span class="feature-badge me-2"><i class="fa-solid fa-flask text-success me-1"></i> EVS & Science</span>
+                                <span class="feature-badge me-2"><i class="fa-solid fa-pen-nib text-info me-1"></i> Creative Writing</span>
+                                <span class="feature-badge"><i class="fa-solid fa-computer text-dark me-1"></i> IT Basics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LINK ADDED HERE -->
+                    <div class="px-4 pb-4">
+                        <a href="file:///D:/kidsschool/primaryschool.html" class="btn w-100 text-white" style="background-color: #4caf50;">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- WAVE DIVIDER TO LIGHT SKIN -->
+    <div class="wave-container" style="background: #fcf8f2;">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none" style="height: 50px; fill: #ffffff;">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+
+    <!-- HOLISTIC DEVELOPMENT ACTIVITIES -->
+    <section class="py-5 container">
+        <div class="text-center mb-5">
+            <span class="badge bg-kids-orange text-white px-3 py-2 rounded-pill mb-2">Beyond Books</span>
+            <h2 class="display-6 text-dark">Holistic Development Activities</h2>
+            <p class="text-muted">Ensuring all-round growth with globally benchmarked co-curricular tracks.</p>
+        </div>
+        
+        <div class="row align-items-center g-5">
+            <div class="col-lg-4 d-none d-lg-block">
+                <!-- Side Highlight Image for Extra Activities -->
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=700" class="side-showcase-img" alt="Kids playing with blocks" style="max-height: 400px;">
+            </div>
+            <div class="col-lg-8">
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <div class="activity-box act-blue">
+                            <div class="fs-1 text-kids-blue mb-2"><i class="fa-solid fa-basketball"></i></div>
+                            <h5 class="fw-bold text-dark">Sports & Fitness</h5>
+                            <p class="text-muted small mb-0">Enhancing motor skills, teamwork, and physical structural stamina through daily supervised sessions.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="activity-box act-pink">
+                            <div class="fs-1 text-kids-pink mb-2"><i class="fa-solid fa-music"></i></div>
+                            <h5 class="fw-bold text-dark">Music & Rhythm</h5>
+                            <p class="text-muted small mb-0">Nurturing creative cognitive frequencies through musical instrumentation workshops and vocal practices.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="activity-box act-green">
+                            <div class="fs-1 text-success mb-2"><i class="fa-solid fa-paintbrush"></i></div>
+                            <h5 class="fw-bold text-dark">Arts & Crafts</h5>
+                            <p class="text-muted small mb-0">Igniting individual imaginations using sketching, multi-color painting labs, and clay layout modeling.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="activity-box act-orange">
+                            <div class="fs-1 text-warning mb-2"><i class="fa-solid fa-brain"></i></div>
+                            <h5 class="fw-bold text-dark">Logic & Chess</h5>
+                            <p class="text-muted small mb-0">Building analytical reasoning capabilities and smart strategic thinking attributes from early development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 🌟 PREMIUM PASTEL GLASS-GRADIENT FOOTER -->
+    <footer class="kids-footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <!-- Column 1: Brand Info -->
+                <div class="col-lg-4 col-md-6 text-center text-md-start">
+                    <a href="#" class="footer-brand text-kids-pink d-block mb-3">
+                        <i class="fa-solid fa-graduation-cap text-kids-blue me-2"></i>N.S. Global
+                    </a>
+                    <p class="text-muted fw-bold" style="font-size: 0.95rem; line-height: 1.7;">
+                        We believe in nurturing individual creativity and potential. Providing a safe, engaging, and elite foundation for bright young minds!
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="social-circle social-facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-circle social-instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-circle social-youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-circle social-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6 col-6 text-center text-md-start ps-md-5">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-link text-kids-blue me-2"></i>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="kidsschool.html" class="footer-link">Home</a></li>
+                        <li><a href="kidsabout.html" class="footer-link">About Us</a></li>
+                        <li><a href="oursclass.html" class="footer-link">Classes</a></li>
+                        <li><a href="portfolio.html" class="footer-link text-kids-pink">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: More Links -->
+                <div class="col-lg-2 col-md-6 col-6 text-center text-md-start">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-heart text-kids-pink me-2"></i>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="kidsgallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="kidscontect.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Admissions</a></li>
+                        <li><a href="#" class="footer-link">Events Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-4 col-md-6 text-center text-md-start">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-compass text-kids-green me-2"></i>Contact Info</h5>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-map-marker-alt text-kids-pink me-2"></i> 123, Spark Street, Creative Zone, India
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone text-kids-blue me-2"></i> +91 98765 43210
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope text-kids-yellow me-2"></i> info@nsglobalschool.com
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25 my-4">
+
+            <!-- Copyright Section -->
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <p class="text-muted fw-bold mb-0" style="font-size: 0.9rem;">
+                        &copy; 2026 <span class="text-kids-pink">N.S. Global School</span>. Crafted with <i class="fa-solid fa-heart text-kids-pink animate-bounce"></i> for Little Stars.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

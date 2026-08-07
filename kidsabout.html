@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | N.S. Global School</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght=500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fcf8f2;
+            color: #4a4a4a;
+        }
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Fredoka One', cursive;
+        }
+        .bg-kids-yellow { background-color: #FFDE4D; }
+        .bg-kids-pink { background-color: #FF6B6B; }
+        .bg-kids-blue { background-color: #4D96FF; }
+        .bg-kids-green { background-color: #6BCB77; }
+        
+        .text-kids-pink { color: #FF6B6B; }
+        .text-kids-blue { color: #4D96FF; }
+        .text-kids-green { color: #6BCB77; }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .nav-link {
+            font-weight: 700;
+            color: #555;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #FF6B6B;
+        }
+
+        /* English Hero Section with Dark Overlay System */
+        .about-hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 110px 0;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 0 0 50px 50px;
+        }
+
+        /* Value Cards */
+        .value-card {
+            border: none;
+            border-radius: 20px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Team Section Styles */
+        .team-card {
+            border: none;
+            border-radius: 25px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .team-card:hover {
+            transform: scale(1.03);
+        }
+        .team-img {
+            height: 280px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .btn-kids {
+            font-family: 'Fredoka One', cursive;
+            border-radius: 30px;
+            padding: 12px 30px;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-kids:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Campus Preview Cards */
+        .tour-img-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border: 4px solid #fff;
+            transition: 0.3s;
+        }
+        .tour-img-card:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+        .tour-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+       /* 🌟 MODERN UNIQUE PASTEL FOOTER STYLING */
+        .kids-footer {
+            /* Unique Premium Pastel Gradient (Soft Indigo to Mint Teal) */
+            background: linear-gradient(135deg, #EBF4FF 0%, #E6FFFA 50%, #F3E8FF 100%);
+            border-radius: 60px 60px 0 0;
+            padding: 70px 0 20px 0;
+            margin-top: 80px;
+            position: relative;
+            box-shadow: 0 -15px 40px rgba(77, 150, 255, 0.06);
+            border-top: 2px solid rgba(255, 255, 255, 0.8);
+        }
+        .footer-brand {
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+        .footer-link {
+            color: #5A6A85;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .footer-link:hover {
+            color: var(--pink);
+            transform: translateX(5px);
+        }
+        .footer-contact-item {
+            font-weight: 600;
+            color: #5A6A85;
+            margin-bottom: 15px;
+        }
+        .footer-contact-item i {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        /* Social Media Icons */
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #5A6A85;
+            margin-right: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-circle:hover {
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .social-facebook:hover { background-color: #3b5998; }
+        .social-instagram:hover { background-color: #e1306c; }
+        .social-youtube:hover { background-color: #ff0000; }
+        .social-twitter:hover { background-color: #1da1f2; }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+        <!-- 1. NAVIGATION BAR -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-kids-pink fs-3" href="#">
+                    <i class="fa-solid fa-graduation-cap me-2 text-kids-blue"></i>N.S. Global School
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/indexkids.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsabout.html">AboutUs</a></li>
+                        <li class="nav=item"><a class="nav=link" href="file:///D:/kidsschool/primaryschool.html">PrimarySchool</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/oursclass.html">Classes</a></li>
+
+                         <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kindergarten.html">kindergarten</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/playgroup.html">PlayGroup</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidsgallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/kidscontect.html">Contact</a></li>
+                       <li class="nav-item"><a class="nav-link" href="file:///D:/kidsschool/potefoilo.html">Potefoilo</a></li>
+                        <li class="nav-item">
+                            <button onclick="toggleAdminView(true)" class="btn btn-outline-dark rounded-pill ms-2"><i class="fa-solid fa-lock me-1"></i> Admin Panel</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!-- 2. ABOUT PAGE HERO HEADER (WITH IMAGE BACKGROUND & ENGLISH CONTENT) -->
+    <header class="about-hero-bg">
+        <div class="container">
+            <span class="badge bg-kids-pink text-white px-3 py-2 rounded-pill mb-3">About Our School</span>
+            <h1 class="display-3 fw-bold mb-3">Our Story & Philosophy</h1>
+            <p class="lead max-width-600 mx-auto" style="font-weight: 500; font-size: 1.2rem;">
+                Nurturing curiosity, building character, and empowering young learners to explore their full potential in a safe, creative world.
+            </p>
+        </div>
+    </header>
+
+    <!-- 3. WHO WE ARE SECTION -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600" alt="Kids learning happily" class="img-fluid rounded-4 shadow-lg">
+                        <div class="position-absolute bottom-0 end-0 bg-kids-green text-white p-3 m-3 rounded-3 shadow text-center" style="max-width: 150px;">
+                            <h3 class="mb-0 fw-bold">10+</h3>
+                            <small>Years of Excellence</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="text-kids-blue mb-3">Welcome to N.S. Global School</h2>
+                    <p class="lead text-muted">Our core objective extends far beyond standard textbook knowledge; we focus comprehensively on cognitive, emotional, and physical skill development.</p>
+                    <p>Located in Ram Nagar, Ludhiana, N.S. Global School provides a highly protected and welcoming space where education seamlessly blends with practical activities. Recognizing that every modern child is unique, our certified educational staff offers individualized mentorship to build a powerful lifelong academic foundation.</p>
+                    
+                    <div class="row g-3 mt-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-heart text-kids-pink fs-3 me-3"></i>
+                                <div><strong>Loving Care</strong><br><small class="text-muted">Home-like environment</small></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-shield text-kids-green fs-3 me-3"></i>
+                                <div><strong>CCTV Secured</strong><br><small class="text-muted">100% safe campus</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OUR MISSION & VISION -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 text-dark">What Drives Us?</h2>
+                <p class="text-muted">The core foundational values and principles guiding our learning frameworks.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card value-card h-100 text-center">
+                        <div class="rounded-circle bg-kids-pink text-white mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa-solid fa-rocket fs-4"></i>
+                        </div>
+                        <h4 class="text-kids-pink">Our Mission</h4>
+                        <p class="text-muted mb-0">To unleash the inherent creative potential within every child while equipping them with absolute self-confidence for tomorrow's challenges.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-card h-100 text-center">
+                        <div class="rounded-circle bg-kids-blue text-white mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa-solid fa-eye fs-4"></i>
+                        </div>
+                        <h4 class="text-kids-blue">Our Vision</h4>
+                        <p class="text-muted mb-0">To build an innovative learning space where academic evolution feels like an inspiring and highly interactive journey rather than a regular burden.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-card h-100 text-center">
+                        <div class="rounded-circle bg-kids-yellow text-dark mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa-solid fa-star fs-4"></i>
+                        </div>
+                        <h4 class="text-warning">Core Values</h4>
+                        <p class="text-muted mb-0">Integrity, deep mutual respect, and high traditional values form the foundational pillars we instill in all our brilliant students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. OUR LEADERSHIP TEAM -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6 text-dark">Meet Our Pillars</h2>
+                <p class="text-muted">Experienced educators dedicated to shaping your child's brilliant futures.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Leader 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card team-card">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" class="team-img" alt="Principal/Director">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="mb-1 text-dark">Mrs. Sharma</h4>
+                            <span class="badge bg-kids-pink mb-3">Founder & Director</span>
+                            <p class="card-text text-muted small">"True education means expanding horizons and building robust mindsets alongside regular coursework."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Leader 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card team-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400" class="team-img" alt="Head Mistress">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="mb-1 text-dark">Ms. Priya Kaur</h4>
+                            <span class="badge bg-kids-blue mb-3">Headmistress</span>
+                            <p class="card-text text-muted small">"We focus on providing strategic learning pathways matching each individual child's unique developmental speed."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CAMPUS PREVIEW CARDS -->
+    <section class="py-5 bg-white text-center">
+        <div class="container">
+            <span class="badge bg-kids-green text-white px-3 py-2 rounded-pill mb-2">Explore Our Infrastructure</span>
+            <h2 class="fw-bold text-dark mb-4">Inside N.S. Global School Campus</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3 col-sm-6">
+                    <div class="tour-img-card">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400" class="tour-img" alt="Modern Library & Story Books">
+                        <div class="p-3 bg-light"><h5 class="m-0 fs-6 fw-bold text-kids-blue">Story Books Corner</h5></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="tour-img-card">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=400" class="tour-img" alt="Smart Activity Classrooms">
+                        <div class="p-3 bg-light"><h5 class="m-0 fs-6 fw-bold text-kids-pink">Smart Classrooms</h5></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="tour-img-card">
+                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=400" class="tour-img" alt="Kids Toy & Learning Zone">
+                        <div class="p-3 bg-light"><h5 class="m-0 fs-6 fw-bold text-success">Fun Play Area</h5></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="tour-img-card">
+                        <img src="https://images.unsplash.com/photo-1564424224827-cd24b8915874?auto=format&fit=crop&q=80&w=400" class="tour-img" alt="Art & Painting Lab">
+                        <div class="p-3 bg-light"><h5 class="m-0 fs-6 fw-bold text-warning">Creative Art Studio</h5></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CALL TO ACTION WITH MODAL LINK -->
+    <section class="py-5 container text-center">
+        <div class="bg-kids-yellow rounded-4 p-5 shadow">
+            <h2 class="fw-bold mb-3">Your Child's Bright Future Starts Right Here! 🌟</h2>
+            <p class="lead mb-4">Schedule an official campus visit to inspect our positive learning ecosystem first-hand.</p>
+            <!-- Launching Bootstrap Modal on Click -->
+            <button class="btn btn-kids bg-kids-pink text-white fs-5 px-4" data-bs-toggle="modal" data-bs-target="#tourModal">
+                <i class="fa-solid fa-bus me-2"></i>Book a Campus Tour
+            </button>
+        </div>
+    </section>
+
+    <!-- TOUR BOOKING MODAL (POPUP FORM) -->
+    <div class="modal fade" id="tourModal" tabindex="-1" aria-labelledby="tourModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header bg-kids-blue text-white border-0 py-3 px-4" style="border-radius: 15px 15px 0 0;">
+                    <h5 class="modal-title" id="tourModalLabel" style="font-family: 'Fredoka One', cursive;"><i class="fa-solid fa-map-location-dot me-2"></i>Schedule Campus Visit</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-close="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form action="https://formsubmit.co/nareshsharmakumar2333@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Campus Tour Request! N.S. Global School">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-secondary">Parent's Full Name</label>
+                            <input type="text" name="Parent Name" class="form-control rounded-pill p-3 border-2" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-secondary">Mobile Number</label>
+                            <input type="tel" name="Phone" class="form-control rounded-pill p-3 border-2" placeholder="Enter mobile number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-secondary">Preferred Date of Visit</label>
+                            <input type="date" name="Visit Date" class="form-control rounded-pill p-3 border-2" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-secondary">Select Child Class Program</label>
+                            <select name="Target Class" class="form-select rounded-pill p-3 border-2" required>
+                                <option value="Playgroup / Nursery">Playgroup & Nursery</option>
+                                <option value="Junior / Senior KG">Junior / Senior KG</option>
+                                <option value="Primary School">Primary School</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-kids bg-kids-pink text-white w-100 p-3 mt-2 shadow fs-5">Confirm Tour Slot</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- 5. 🌟 PREMIUM PASTEL GLASS-GRADIENT FOOTER -->
+    <footer class="kids-footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <!-- Column 1: Brand Info -->
+                <div class="col-lg-4 col-md-6 text-center text-md-start">
+                    <a href="#" class="footer-brand text-kids-pink d-block mb-3">
+                        <i class="fa-solid fa-graduation-cap text-kids-blue me-2"></i>N.S. Global
+                    </a>
+                    <p class="text-muted fw-bold" style="font-size: 0.95rem; line-height: 1.7;">
+                        We believe in nurturing individual creativity and potential. Providing a safe, engaging, and elite foundation for bright young minds!
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="social-circle social-facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-circle social-instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-circle social-youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-circle social-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6 col-6 text-center text-md-start ps-md-5">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-link text-kids-blue me-2"></i>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="kidsschool.html" class="footer-link">Home</a></li>
+                        <li><a href="kidsabout.html" class="footer-link">About Us</a></li>
+                        <li><a href="oursclass.html" class="footer-link">Classes</a></li>
+                        <li><a href="portfolio.html" class="footer-link text-kids-pink">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: More Links -->
+                <div class="col-lg-2 col-md-6 col-6 text-center text-md-start">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-heart text-kids-pink me-2"></i>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="kidsgallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="kidscontect.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Admissions</a></li>
+                        <li><a href="#" class="footer-link">Events Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-4 col-md-6 text-center text-md-start">
+                    <h5 class="fw-bold mb-4 text-dark"><i class="fa-solid fa-compass text-kids-green me-2"></i>Contact Info</h5>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-map-marker-alt text-kids-pink me-2"></i> 123, Spark Street, Creative Zone, India
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone text-kids-blue me-2"></i> +91 98765 43210
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope text-kids-yellow me-2"></i> info@nsglobalschool.com
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25 my-4">
+
+            <!-- Copyright Section -->
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <p class="text-muted fw-bold mb-0" style="font-size: 0.9rem;">
+                        &copy; 2026 <span class="text-kids-pink">N.S. Global School</span>. Crafted with <i class="fa-solid fa-heart text-kids-pink animate-bounce"></i> for Little Stars.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
